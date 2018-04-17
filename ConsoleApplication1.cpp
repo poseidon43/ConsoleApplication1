@@ -117,3 +117,84 @@ int main() {
 			
 	return 0;
 }
+//What follows below this is the work I've done
+/* #include "stdafx.h"             
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+#include <vector>
+using namespace std;
+
+
+int main(){
+	const int ROWS = 6;
+	const int COLS = 7;
+	char connect4[ROWS] [COLS];
+	int turnPlayer, i, j, r, c;
+	char proceed;
+	int xPiece, oPiece;
+
+	cout << " Connect 4: Fun and Galore\n";
+	cout << " Press y to proceed: ";
+	cin >> proceed;
+
+	for (i = 0; i < ROWS; ++i) {                                  // Assigns dashes to indicate blank spaces
+		for (j = 0; j < COLS; ++j) {
+			connect4[i][j] = '-';
+		}
+	}
+		while(proceed == 'y' || proceed == 'Y') { 	//Prints out the current board after each iteration
+			cout << "  1 2 3 4 5 6 7\n";            //The while loop can easily be exited with the victory code
+			for (i = 0; i < ROWS; ++i) {
+				cout << i + 1;
+				for (j = 0; j < COLS; ++j) {
+					cout << " " << connect4[i] [j];
+				}
+				cout << endl;
+		}
+			cout << "enter column number to place X piece in: ";
+			cin >> xPiece;
+			
+			while (xPiece < 1 || xPiece > 7) {			//for invalid entries
+				cout << xPiece << " is not a valid column, enter a valid number: ";
+				cin >> xPiece;
+			}
+			j = xPiece - 1;				//To make sure the input fits in the array
+			for (i = ROWS; i >= 0; --i) {
+				if (connect4[i][j] == '-') {
+					connect4[i][j] = 'x';
+					break;
+				}
+			}
+			for (i = 0; i < ROWS; ++i) {		//the code for finding if connect 4 had been reached for the x pieces
+				r = i;
+				for (j = 0; j < COLS; ++j) {
+					c = j;
+					if (connect4[r][c] == 'x') {
+						cout << r << c << "check one\n";
+						r--;
+						c++;
+						if (connect4[r][c] == 'x') {
+							cout << r << c << "check 2\n";
+							r--;
+							c++;
+							if (connect4[r][c] == 'x') {
+								cout << r << c << "check 3\n";
+								r--;
+								c++;
+								if (connect4[r][c] == 'x') {
+									cout << "BITCONNEEEEEEEEEECT!!!!!\n";
+								
+								}
+							}
+						}
+					}
+					/*	else {
+							cout << "else working\n";
+							break; 
+						} */
+					}
+				}
+			}
+    return 0;
+} */
