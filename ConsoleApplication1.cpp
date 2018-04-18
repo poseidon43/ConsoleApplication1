@@ -78,6 +78,103 @@ void PrintBoard() {
 	}
 	cout << endl;
 }
+								//Victory checker code
+void VictoryCheck(char player, bool turnNum) {
+	const int ROWS = 6;
+	const int COLS = 7;
+	int i, j, r, c;
+
+	char connect4[ROWS][COLS];
+
+	for (i = 0; i < ROWS; ++i) {
+		for (j = 0; j < COLS; ++j) { //horizontal check
+			r = i;
+			c = j;
+			if (connect4[r][c] == player) {
+				--j;
+				if (connect4[r][c] == player) {
+					--j;
+					if (connect4[r][c] == player) {
+						--j;
+						if (connect4[r][c] == player) {
+							if (turnNum == true) {
+								cout << "Red player wins\n";
+							}
+						}
+
+					}
+				}
+			}
+		}
+	}
+
+	for (i = 0; i < ROWS; ++i) {		//the code for finding if connect 4 had been reached for the x pieces, this only for got diagonal up
+		r = i;
+		for (j = 0; j < COLS; ++j) {
+			c = j;
+			if (connect4[r][c] == player) {
+				r--;
+				c++;
+				if (connect4[r][c] == player) {
+					r--;
+					c++;
+					if (connect4[r][c] == player) {
+						r--;
+						c++;
+						if (connect4[r][c] == player) {
+							if (turnNum == true) {
+								cout << "Red player wins\n";
+							}
+						}
+
+					}
+				}
+			}
+		}
+
+	}
+	for (i = 0; i < ROWS; ++i) { //downward victory check I think
+		for (j = 0; j < COLS; ++j) {
+			if (connect4[i][j] == player) {
+				--i;
+				if (connect4[i][j] == player) {
+					--i;
+					if (connect4[i][j] == player) {
+						--i;
+						if (connect4[i][j] == player) {
+							if (turnNum == true) {
+								cout << "Red player wins\n";
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	for (i = 0; i < ROWS; ++i) { //Diagonal downward checker
+		r = i;
+		for (j = 0; j < COLS; ++j) {
+			c = j;
+			if (connect4[r][c] == player) {
+				++r;
+				--c;
+				if (connect4[r][c] == player) {
+					++r;
+					--c;
+					if (connect4[r][c] == player) {
+						++r;
+						--c;
+						if (connect4[r][c] == player) {
+							if (turnNum == true) {
+								cout << "Red player wins\n";
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
 
 
 int main() {
