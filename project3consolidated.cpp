@@ -21,7 +21,7 @@ string player1, player2;
 
 // hadouken - VM //
 
-//Mac was here =^.^= Time to clean this up :) 4/17/18 - MC
+// last edited 4/17/2018
 
 
 char GameBoard[ARR_NUM_ROWS][ARR_NUM_COLS] = {};
