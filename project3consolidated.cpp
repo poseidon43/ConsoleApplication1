@@ -59,20 +59,20 @@ void CreateGame() {
 			GameBoard[i][j] = EMPTY_SPACE;
 		}
 	}
-
+	// rules of the game
 	cout << "Welcome To Connect FOUR! The vertical checkers game. Get four in a row to win!" << endl;
 	cout << "RULES OF THE GAME" << endl;
 	cout << "--Each player will randomly be assigned a color" << endl;
 	cout << "--The goal is to drop chips onto the gameboard and try to get four of the same colored chips in a row" << endl;
 	cout << "--If you get four in a row first, you win!" << endl;
-
+	// cin for player names, then a random color will be assigned. used for identification purposes
 	cout << "Player one, enter your name: ";
 	cin >> player1;
 	cout << "Player two, enter your name: ";
 	cin >> player2;
 
 	cout << "In this match, " << player1 << " is going up against " << player2 << "!" << endl;
-	
+	// if else statements used to randomly assign color to a player
 	if (nameAssignNum == 0) {
 		cout << player1 << " is assigned the red color (R)" << endl;
 		cout << player2 << " is assigned the yellow color (Y)" << endl;
@@ -85,7 +85,7 @@ void CreateGame() {
 	PrintBoard();
 }
 
-//Drops chip and handels logic 
+//Drops chip into board based on the color of the player and the turn.
 void DropChip(char color) {
 	if (dropColumn < 1 || dropColumn > 7) {
 		cout << "INVALID INPUT! Enter a number (1-7): ";
